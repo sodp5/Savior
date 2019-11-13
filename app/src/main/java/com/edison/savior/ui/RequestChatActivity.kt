@@ -15,19 +15,10 @@ import android.view.LayoutInflater
 import android.widget.TextView
 
 class RequestChatActivity : AppCompatActivity() {
-    private lateinit var adapter: ArrayAdapter<String>
     private lateinit var binding: ActivityRequestChatBinding
 
-    val _message = MutableLiveData<String>()
-    private val message: LiveData<String> get() = _message
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_request_chat)
-        binding.activity = this
-        binding.lifecycleOwner = this
-
-        adapter = object : ArrayAdapter<String>(this, R.layout.item_request_chat) {
+    private val adapter: ArrayAdapter<String> by lazy {
+        object: ArrayAdapter<String>(this, R.layout.item_request_chat) {
             lateinit var view: View
 
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -42,6 +33,17 @@ class RequestChatActivity : AppCompatActivity() {
                 return view
             }
         }
+    }
+
+    val _message = MutableLiveData<String>()
+    private val message: LiveData<String> get() = _message
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_request_chat)
+        binding.activity = this
+        binding.lifecycleOwner = this
+
         lv_display_chat.adapter = adapter
     }
 
@@ -50,5 +52,4 @@ class RequestChatActivity : AppCompatActivity() {
         _message.value = ""
         lv_display_chat.smoothScrollToPosition(adapter.count)
     }
-
 }
