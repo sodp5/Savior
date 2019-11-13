@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.LoginActivity">
+    <data>
+        <variable
+            name="activity"
+            type="com.edison.savior.ui.LoginActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/iv_loginLogo"
+            android:layout_width="180dp"
+            android:layout_height="100dp"
+            android:src="@drawable/txt_login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
+
+        <EditText
+            android:id="@+id/edit_inputId"
+            android:layout_width="290dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:paddingStart="72dp"
+            android:background="@drawable/box_input_id"
+            android:text="@={activity._id}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_loginLogo"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="@id/edit_inputId"
+            app:layout_constraintTop_toTopOf="@id/edit_inputId"
+            app:layout_constraintBottom_toBottomOf="@id/edit_inputId"/>
+
+        <EditText
+            android:id="@+id/edit_inputPw"
+            android:layout_width="290dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="72dp"
+            android:background="@drawable/box_input_pw"
+            android:text="@={activity._pw}"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_inputId"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="@id/edit_inputPw"
+            app:layout_constraintTop_toTopOf="@id/edit_inputPw"
+            app:layout_constraintBottom_toBottomOf="@id/edit_inputPw"/>
+
+        <ImageButton
+            android:id="@+id/btn_login"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/btn_login"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:onClick="@{(v) -> activity.login()}"
+            app:layout_constraintTop_toBottomOf="@id/edit_inputPw"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <ImageButton
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/btn_verify_public_officer"
+            android:scaleType="fitXY"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
