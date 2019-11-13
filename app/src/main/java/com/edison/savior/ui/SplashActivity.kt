@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
-            startActivity(Intent(application, MapActivity::class.java))
+            startActivity(Intent(application, RequestChatActivity::class.java))
             finish()
         }, 2000)
     }
