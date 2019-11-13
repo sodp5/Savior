@@ -10,9 +10,10 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.edison.savior.R
+import com.edison.savior._base.BaseActivity
 import kotlinx.android.synthetic.main.activity_location.*
 
-class LocationActivity : AppCompatActivity() {
+class LocationActivity : BaseActivity() {
     private val adapter: ArrayAdapter<PersonInfo> by lazy {
         object: ArrayAdapter<PersonInfo>(this, R.layout.item_person_locate) {
             lateinit var view: View
@@ -49,6 +50,8 @@ class LocationActivity : AppCompatActivity() {
 
         private var rotation = 0
     }
+
+    override fun setStatusBarColor() = STATUS_WHITE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -14,4 +14,8 @@
     <color name="stateSafe">#4e9d58</color>
     <color name="stateWarning">#decb5c</color>
     <color name="stateDanger">#d34943</color>
+
+    <color name="mainStatusBar">#bb0002</color>
+    <color name="subStatusBar">#ecdbd6</color>
+
 </resources>

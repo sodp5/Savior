@@ -13,8 +13,9 @@ import com.edison.savior.databinding.ActivityRequestChatBinding
 import kotlinx.android.synthetic.main.activity_request_chat.*
 import android.view.LayoutInflater
 import android.widget.TextView
+import com.edison.savior._base.BaseActivity
 
-class RequestChatActivity : AppCompatActivity() {
+class RequestChatActivity : BaseActivity() {
     private lateinit var binding: ActivityRequestChatBinding
 
     private val adapter: ArrayAdapter<String> by lazy {
@@ -34,6 +35,8 @@ class RequestChatActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun setStatusBarColor() = STATUS_WHITE
 
     val _message = MutableLiveData<String>()
     private val message: LiveData<String> get() = _message

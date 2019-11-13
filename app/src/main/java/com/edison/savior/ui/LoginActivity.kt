@@ -7,9 +7,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.edison.savior.R
+import com.edison.savior._base.BaseActivity
 import com.edison.savior.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     val _id = MutableLiveData<String>()
@@ -19,6 +20,8 @@ class LoginActivity : AppCompatActivity() {
 
     private val ADMIN_ID = "admin"
     private val ADMIN_PW = "1234"
+
+    override fun setStatusBarColor() = STATUS_WHITE
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
