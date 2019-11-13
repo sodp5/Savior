@@ -10,4 +10,8 @@
     <color name="mainText">#656565</color>
     <color name="subText">#cdcac9</color>
     <color name="white">#fef4f2</color>
+    
+    <color name="stateSafe">#4e9d58</color>
+    <color name="stateWarning">#decb5c</color>
+    <color name="stateDanger">#d34943</color>
 </resources>
