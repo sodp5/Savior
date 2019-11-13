@@ -1,5 +1,6 @@
 package com.edison.savior.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -59,6 +60,10 @@ class LocationActivity : AppCompatActivity() {
         addPerson("김민지", "H동208호", STATE_DANGER)
 
         lv_peopleList.adapter = adapter
+
+        lv_peopleList.setOnItemClickListener { parent, view, position, id ->
+            startActivity(Intent(applicationContext, RequestChatActivity::class.java))
+        }
     }
 
     fun addPerson(personName: String, personLocate: String, stateInfo: String) {
@@ -67,14 +72,11 @@ class LocationActivity : AppCompatActivity() {
 
     private data class PersonInfo(val personName: String, val personLocate: String,
                                   val stateInfo: String) {
-        val stateColor: Int by lazy {
-            when (stateInfo) {
+        val stateColor: Int = when (stateInfo) {
                 STATE_SAFE -> R.color.stateSafe
                 STATE_WARNING -> R.color.stateWarning
                 STATE_DANGER -> R.color.stateDanger
                 else -> R.color.white
-            }
         }
-
     }
 }
