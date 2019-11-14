@@ -33,7 +33,7 @@ class LoginActivity : BaseActivity() {
     fun login() {
         if (id.value.equals(ADMIN_ID)) {
             if (pw.value.equals(ADMIN_PW)) {
-                startActivity(Intent(applicationContext, PeopleLocationActivity::class.java))
+                startActivity(Intent(applicationContext, MapActivity::class.java))
                 finish()
             }
             else {

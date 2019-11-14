@@ -12,11 +12,14 @@ import com.edison.savior.R
 import com.edison.savior.databinding.ActivityRequestChatBinding
 import kotlinx.android.synthetic.main.activity_request_chat.*
 import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.edison.savior._base.BaseActivity
 
 class RequestChatActivity : BaseActivity() {
     private lateinit var binding: ActivityRequestChatBinding
+    private var isYou = true
 
     private val adapter: ArrayAdapter<String> by lazy {
         object: ArrayAdapter<String>(this, R.layout.item_request_chat) {
@@ -28,6 +31,16 @@ class RequestChatActivity : BaseActivity() {
                     inflater.inflate(R.layout.item_request_chat, parent, false)
                 } else {
                     convertView
+                }
+
+                if (!isYou) {
+                    view.findViewById<ConstraintLayout>(R.id.cl_fighterMessageWrapper).apply {
+                        visibility = View.VISIBLE
+                    }
+                    view.findViewById<ConstraintLayout>(R.id.cl_yourMessageWrapper).apply {
+                        visibility = View.GONE
+                    }
+                    isYou = true
                 }
 
                 view.findViewById<TextView>(R.id.txt_myMessage).text = getItem(position)
@@ -46,6 +59,11 @@ class RequestChatActivity : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_request_chat)
         binding.activity = this
         binding.lifecycleOwner = this
+
+        if(intent.getStringExtra("isExistMessage") == "come") {
+            adapter.add("살려주세요!!")
+            isYou = false
+        }
 
         lv_display_chat.adapter = adapter
     }

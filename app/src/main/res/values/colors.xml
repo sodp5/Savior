@@ -8,7 +8,6 @@
     <color name="mainColor">#d71719</color>
     <color name="subColor">#f2dfdb</color>
     <color name="mainText">#29292d</color>
-<!--    <color name="mainText">#656565</color>-->
     <color name="subText">#cdcac9</color>
 
     <color name="black">#29292d</color>
@@ -21,7 +20,7 @@
     <color name="mainStatusBar">#bb0002</color>
     <color name="subStatusBar">#ecdbd6</color>
 
-<!--    <color name="poiCollapse">#dcaeae</color>-->
+    <color name="loginText">#ba9f9f</color>
     <color name="poiCollapse">#e3c1bd</color>
 
 </resources>

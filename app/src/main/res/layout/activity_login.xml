@@ -30,10 +30,10 @@
             android:layout_width="290dp"
             android:layout_height="55dp"
             android:layout_marginTop="30dp"
-            android:paddingStart="72dp"
+            android:paddingStart="80dp"
             android:background="@drawable/box_input_id"
             android:text="@={activity._id}"
-            android:textColor="@color/white"
+            android:textColor="@color/loginText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_loginLogo"/>
@@ -50,10 +50,10 @@
             android:layout_width="290dp"
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
-            android:paddingStart="72dp"
+            android:paddingStart="80dp"
             android:background="@drawable/box_input_pw"
             android:text="@={activity._pw}"
-            android:textColor="@color/white"
+            android:textColor="@color/loginText"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
         <ImageButton
             android:id="@+id/btn_login"
             android:layout_width="190dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_marginTop="50dp"
             android:src="@drawable/btn_login"
             android:scaleType="fitXY"
@@ -80,7 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
         <ImageButton
             android:layout_width="190dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/btn_verify_public_officer"
             android:scaleType="fitXY"

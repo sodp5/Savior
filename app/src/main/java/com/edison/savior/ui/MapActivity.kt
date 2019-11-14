@@ -67,7 +67,7 @@ class MapActivity : BaseActivity() {
                 }
 
                 view.findViewById<LinearLayout>(R.id.ll_checkMessageWrapper).setOnClickListener {
-                    startActivity(Intent(applicationContext, RequestChatActivity::class.java))
+                    startActivity(Intent(applicationContext, CheckMessageActivity::class.java))
                 }
 
                 view.findViewById<LinearLayout>(R.id.ll_checkLocationWrapper).setOnClickListener {
@@ -86,22 +86,11 @@ class MapActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
 
-        addPoi("학교", "정왕동 2300", "과기대로 2231312301")
-        addPoi("학교옆", "정왕동 2299", "과기대로 2243412301")
-        addPoi("학교뒤", "정왕동 2312", "과기대로 2543212301")
+        addPoi("경기과학기술대학교 중소기업관", "정왕동 2122-1", "경기 시흥시 경기과기대로 270")
+        addPoi("경기과학기술대학교 제1캠퍼스", "정왕동 2321-3", "경기 시흥시 경기과기대로 269")
+        addPoi("경기과학기술대학교 다솜학사1관", "정왕동 2122-2", "경기 시흥시 경기과기대로 270")
 
         lv_poiList.adapter = adapter
-
-//        val bottomSheetBehavior = BottomSheetBehavior.from(cl_bottomSheetPoiList)
-//        bottomSheetBehavior.setBottomSheetCallback(object: BottomSheetBehavior.BottomSheetCallback() {
-//            override fun onSlide(p0: View, p1: Float) {
-//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//            }
-//
-//            override fun onStateChanged(p0: View, p1: Int) {
-//                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//            }
-//        })
     }
 
     fun addPoi(poiName: String, poiJibun: String, poiLoadName: String) {
