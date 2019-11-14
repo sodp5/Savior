@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="112dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/subColor">
     <TextView
         android:id="@+id/txt_poiName"
         android:layout_width="wrap_content"
@@ -12,13 +13,24 @@
         android:layout_marginTop="16dp"
         android:text="서울시청"
         android:textSize="22sp"
+        android:textColor="@color/mainColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:src="@drawable/btn_select_poi"
+        android:scaleType="fitXY"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/txt_poiName"
+        app:layout_constraintTop_toTopOf="@id/txt_poiName"
+        app:layout_constraintBottom_toBottomOf="@id/txt_poiName"/>
     <TextView
         android:id="@+id/txt_jibun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울 특별시 중구 어찌구저찌구얄리"
+        android:textColor="@color/black"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@id/txt_poiName"
         app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
@@ -27,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울 특별시 중구 어찌구저찌구얄리"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/txt_jibun"
         app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
 

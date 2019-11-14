@@ -1,8 +1,8 @@
 package com.edison.savior.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -33,8 +33,15 @@ class LoginActivity : BaseActivity() {
     fun login() {
         if (id.value.equals(ADMIN_ID)) {
             if (pw.value.equals(ADMIN_PW)) {
-                startActivity(Intent(applicationContext, MapActivity::class.java))
+                startActivity(Intent(applicationContext, PeopleLocationActivity::class.java))
+                finish()
             }
+            else {
+                Toast.makeText(applicationContext, "incorrect PW!!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        else {
+            Toast.makeText(applicationContext, "incorrect ID!!", Toast.LENGTH_SHORT).show()
         }
     }
 }

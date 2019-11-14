@@ -13,4 +13,5 @@ class MapActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
     }
+
 }

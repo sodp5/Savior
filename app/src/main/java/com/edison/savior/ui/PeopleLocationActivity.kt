@@ -13,18 +13,20 @@ import com.edison.savior.R
 import com.edison.savior._base.BaseActivity
 import kotlinx.android.synthetic.main.activity_location.*
 
-class LocationActivity : BaseActivity() {
+class PeopleLocationActivity : BaseActivity() {
     private val adapter: ArrayAdapter<PersonInfo> by lazy {
         object: ArrayAdapter<PersonInfo>(this, R.layout.item_person_locate) {
             lateinit var view: View
 
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
                 view = if (convertView == null) {
                     val inflater = context.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
                     inflater.inflate(R.layout.item_person_locate, parent, false)
                 } else {
                     convertView
                 }
+                
                 val character = when(rotation++ % 4) {
                     0 -> R.drawable.character_one
                     1 -> R.drawable.character_two
@@ -64,7 +66,7 @@ class LocationActivity : BaseActivity() {
 
         lv_peopleList.adapter = adapter
 
-        lv_peopleList.setOnItemClickListener { parent, view, position, id ->
+        lv_peopleList.setOnItemClickListener { _, _, _, _->
             startActivity(Intent(applicationContext, RequestChatActivity::class.java))
         }
     }
