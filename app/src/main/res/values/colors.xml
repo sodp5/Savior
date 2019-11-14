@@ -21,4 +21,7 @@
     <color name="mainStatusBar">#bb0002</color>
     <color name="subStatusBar">#ecdbd6</color>
 
+<!--    <color name="poiCollapse">#dcaeae</color>-->
+    <color name="poiCollapse">#e3c1bd</color>
+
 </resources>

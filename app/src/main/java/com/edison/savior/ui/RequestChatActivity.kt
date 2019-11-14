@@ -52,6 +52,7 @@ class RequestChatActivity : BaseActivity() {
 
     fun sendMessage() {
         adapter.add(message.value)
+        adapter.notifyDataSetChanged()
         _message.value = ""
         lv_display_chat.smoothScrollToPosition(adapter.count)
     }

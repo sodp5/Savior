@@ -27,7 +27,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="현 주소"
-                    android:textSize="18sp"
                     android:textColor="#ee3333"/>
                 <TextView
                     android:layout_width="0dp"
@@ -35,6 +34,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="16dp"
                     android:text="서울특별시 종구 태평로1가 31"
+                    android:textSize="14sp"
                     android:textColor="#333333"/>
                 <ImageView
                     android:layout_width="20dp"
@@ -48,9 +48,9 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/bs_posListLayout"
+            android:id="@+id/cl_bottomSheetPoiList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             app:behavior_peekHeight="200dp">
             <ImageView
@@ -62,10 +62,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
             <ListView
-                android:id="@+id/rv_poiList"
+                android:id="@+id/lv_poiList"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:background="@color/subColor"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_bottomSheetTouchBar"/>

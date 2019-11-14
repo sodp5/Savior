@@ -26,7 +26,7 @@ class PeopleLocationActivity : BaseActivity() {
                 } else {
                     convertView
                 }
-                
+
                 val character = when(rotation++ % 4) {
                     0 -> R.drawable.character_one
                     1 -> R.drawable.character_two
@@ -73,6 +73,7 @@ class PeopleLocationActivity : BaseActivity() {
 
     fun addPerson(personName: String, personLocate: String, stateInfo: String) {
         adapter.add(PersonInfo(personName, personLocate, stateInfo))
+        adapter.notifyDataSetChanged()
     }
 
     private data class PersonInfo(val personName: String, val personLocate: String,

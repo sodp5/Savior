@@ -1,46 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="112dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@color/subColor">
-    <TextView
-        android:id="@+id/txt_poiName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="16dp"
-        android:text="서울시청"
-        android:textSize="22sp"
-        android:textColor="@color/mainColor"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:src="@drawable/btn_select_poi"
-        android:scaleType="fitXY"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@id/txt_poiName"
-        app:layout_constraintTop_toTopOf="@id/txt_poiName"
-        app:layout_constraintBottom_toBottomOf="@id/txt_poiName"/>
-    <TextView
-        android:id="@+id/txt_jibun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서울 특별시 중구 어찌구저찌구얄리"
-        android:textColor="@color/black"
-        android:layout_marginTop="12dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_poiName"
-        app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
-    <TextView
-        android:id="@+id/txt_load"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="서울 특별시 중구 어찌구저찌구얄리"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/txt_jibun"
-        app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_poiItemWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:background="@color/subColor">
+        <TextView
+            android:id="@+id/txt_poiName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="16dp"
+            android:text="서울시청"
+            android:textSize="22sp"
+            android:textColor="@color/mainColor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:background="@null"
+            android:src="@drawable/btn_select_poi"
+            android:scaleType="fitXY"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/txt_poiName"
+            app:layout_constraintTop_toTopOf="@id/txt_poiName"
+            app:layout_constraintBottom_toBottomOf="@id/txt_poiName"/>
+        <TextView
+            android:id="@+id/txt_poiJibun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울 특별시 중구 어찌구저찌구얄리"
+            android:textColor="@color/black"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_poiName"
+            app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
+        <TextView
+            android:id="@+id/txt_poiLoadName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울 특별시 중구 어찌구저찌구얄리"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/txt_poiJibun"
+            app:layout_constraintStart_toStartOf="@id/txt_poiName"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_collapsePoiItemFun"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:background="@color/poiCollapse"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/ll_searchStateWrapper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/iv_searchState"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/btn_start_search"/>
+            <TextView
+                android:id="@+id/txt_searchState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탐색 시작"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_checkMessageWrapper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/btn_check_message"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="메세지 확인"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_checkLocationWrapper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/btn_check_location"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치 확인"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_stopSearchWrapper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/btn_end_search"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탐색 종료"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
